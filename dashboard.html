@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Management Dashboard</title>
+</head>
+<body>
+    <h1>Risk Management Dashboard</h1>
+
+    <h2>Detected Risks</h2>
+    <p><strong>Unauthorized Access:</strong> {{ unauthorized_access }}</p>
+    <p><strong>DDoS Activity:</strong> {{ ddos_risk }}</p>
+    <p><strong>Malware Activity:</strong> {{ malware_activity }}</p>
+
+    <h2>Risk Assessment</h2>
+    <ul>
+        {% for risk, assessment in risks.items() %}
+            <li>{{ risk }}: {{ assessment }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Risk Mitigations</h2>
+    <ul>
+        {% for risk, mitigation in mitigations.items() %}
+            <li>{{ risk }}: {{ mitigation }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
